@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electric Guitar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!--<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Electric Guitar</h1>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#home" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
+								<li><a href="#intro" id="portfolio-link"><span class="icon solid fa-th">Introduction</span></a></li>
+								<li><a href="#project" id="about-link"><span class="icon solid fa-user">Project</span></a></li>
+								<li><a href="#back" id="contact-link"><span class="icon solid fa-envelope">Back</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>	-->
+							<!--<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>	-->
+							<li><a href="https://github.com/marcoebeling2?tab=repositories" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/marco-ebeling/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<!--<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>	-->
+							<!--<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>	-->
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>Electric Guitar</strong>
+								<p></p>
+							</header>
+
+							<footer>
+								<img src="images/guitar.jfif" alt=""> <!-- 1509 x 1986 originally-->
+
+							</footer>							
+							  
+							  
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="intro" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Introduction</h2>
+							</header>
+
+							<p>In this project, I designed a filteration circuit to filter out the sound of one note in a six-string electric guitar. I choose tp filter out C, which corresponds to 81 Hz.</p>
+
+					</section>
+
+					<!--   Neuromdulation Page  -->
+					<div id="neuromodulation-circuit">
+						<!-- Contents go here -->
+					</div>	
+
+
+				<!-- About Me -->
+					<section id="project" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Project</h2>
+							</header>
+
+							<!-- Body now -->
+
+
+							<!-- Non-inverting amp -->
+							<div class="col-4 col-8-mobile">
+								<article class="item">
+								  <div class="row">
+									<div class="col-6 order-2 order-1-mobile">
+									  <p>To begin this circuit, I needed to amplify the signal from the pick-up on the guitar. Thus, I designed a non-inveting op-amp with a gain of 2.</p>
+									</div>
+									<div class="col-6 order-1 order-2-mobile">
+									  <a href="non-inverting circuit" class="image fit">
+										<img src="images/noninvertingCircuit.jpg" alt="" width="316" height="247"/>  <!-- height: 740 px width: 947 px px -->
+									  </a>
+									  <a href="KiCAD 3D Model" class="image fit">
+										<img src="images/nonInvertingOutput.jpg" alt="" width="390" height="203"/>  <!-- height: 812 px width: 1560 px -->
+									  </a>
+									  <header>
+										<h3>Non-Inverting Schematic and DC Sweep using LTSpice</h3>
+									  </header>
+									</div>
+								  </div>
+								</article>
+							  </div>	
+
+
+							  <!-- Twin-t -->
+							  <div class="col-4 col-8-mobile">
+								<article class="item">
+									<div class="row">
+										<div class="col-6">
+											<a href="Twin-T Schematic" class="image fit">
+												<img src="images/twinT.jpg" alt="" width="391" height="171"/> <!-- height: 342 px width: 782 px og size -->
+											</a>
+											<a href="Twin-T LTSpice" class="image fit">
+												<img src="images/twinTCircuit.png" alt="" width="475" height="343"/> <!--height: 515 px width: 712 px og size -->
+											</a>
+											<a href="simulation-image" class="image fit">
+												<img src="images/acSweepTwinT.png" alt="" width="393" height="204"/> <!-- height: 814 px width: 1560 px og size -->
+											</a>
+											<header>
+												<h3>Twin-T schematic, Twin-T schematic with approximate component values, and the corresponding AC-sweep</h3>
+											  </header>
+										</div>
+										<div class="col-6">
+											<p>To filter out one specific note, C in this case, I decided to use a Twin-T notch filter. Using the design equations for a Twin-T bandpass filter and avaliable componets, I computed the necassary component values to filter out a C at 81 Hz. After this, I ran an AC-sweep analysis on LTSpice. After this, I placed the non-inveting amplifier as the input to the Twin-T notch filter.</p>
+										</div>
+									</div>
+								</article>
+							</div>		
+							
+							
+							<!-- More modifications -->
+							<div class="col-4 col-8-mobile">
+								<article class="item">
+								  <div class="row">
+									<div class="col-6 order-2 order-1-mobile">
+									  <p>The current iteration of this circuit had one main issue; the band-stop was too narrow. To fix this, I introduced negative feedback within the Twin-T notch filter using design equations from <a href="https://www.electronics-tutorials.ws/filter/band-stop-filter.html">https://www.electronics-tutorials.ws/filter/band-stop-filter.html</a>. First, I decoupled the out of the Twin-T notch filter by adding a unity gain buffer. Then, using a voltage divider, I decreased the output of the unity gain, which is the same as the output of the Twin-T notch filter. I chose to decrease the voltage by a factor of 2, which has the effect of doubling the bandstop region. At this point, I needed to connect the negative feedback back to the Twin-T notch filter. Again, I used a unity gain buffer to decouple the two parts of the circuit.</p>
+									</div>
+									<div class="col-6 order-1 order-2-mobile">
+									  <a href="assembled" class="image fit">
+										<img src="images/assembled.png" alt="" width="390" height="161"/>  <!-- height: 642 px width: 1560 px -->
+									  </a>
+									  <a href="assembled output" class="image fit">
+										<img src="images/assembledOutput.png" alt="" width="316" height="165"/>  <!-- height: 661 px width: 1264 px -->
+									  </a>
+									  <header>
+										<h3>Schematic of the circuit with the added modifications, and the output of an AC-sweep for this circuit</h3>
+									  </header>
+									</div>
+								  </div>
+								</article>
+							  </div>	
+
+
+
+							<!-- IRL -->
+							<div class="col-4 col-8-mobile">
+								<article class="item">
+									<div class="row">
+										<div class="col-6">											
+											<a href="Bread-board" class="image fit">
+												<img src="images/irlCircuit.jpg" alt="" width="338" height="500"/> <!-- height: 1000 px width: 675 px -->
+											</a>
+											<a href="output" class="image fit">
+												<img src="images/irlOut.jpg" alt=""/> <!-- height: 307 px width: 442 px -->
+											</a>
+											<header>
+												<h3>Bread-board circuit, and output</h3>
+											</header>
+										</div>
+										<div class="col-6">
+											<p>I constructed the circuit on a bread board (shown on the right). Then, I introduced a 2 Volt peak-to-peak signal at 81 Hz (output shown to the right). In the output, the input signal is in yellow, and the output signal is in blue. The modified Twin-T notch filter successfully filtered out an 81 Hz signal. Now, it could be used for an electric guitar!</p>
+										</div>
+									</div>
+								</article>
+							</div>	
+							
+							<!-- conclusion -->
+							<div class="col-4 col-8-mobile">
+								<article class="item">
+									<div class="row">
+										<p></p>
+										<p>While this project was successful technically, I also gained valuable expierence in circuit design. One area that I learned about was compartmentalization. Breaking up this circuit in compartments (non-inveting op-amp, Twin-T notch filter, unity gain buffer, and voltage divider) to test the functionality of each compartment seperately was effective. This proccess also made combine the compartments together easier because I already new if each part functioned.</p>
+									</div>
+								</article>
+							</div>	
+									
+								  
+
+							</div>
+					</section>
+
+				<!-- Back -->
+				<section id="back" class="four">
+					<div class="container">
+					  <header>
+						<a href="https://marcoebeling2.github.io/" class="button scrolly">Back</a>
+					  </header>
+					
+				  </section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
